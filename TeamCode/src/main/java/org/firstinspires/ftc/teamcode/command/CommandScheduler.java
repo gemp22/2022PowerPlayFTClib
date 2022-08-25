@@ -1,5 +1,28 @@
 package org.firstinspires.ftc.teamcode.command;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Consumer;
+
+/**
+ * The scheduler responsible for running {@link Command}s.  A Command-based robot should call {@link
+ * CommandScheduler#run()} on the singleton instance in its periodic block in order to run commands
+ * synchronously from the main loop.  Subsystems should be registered with the scheduler using
+ * {@link CommandScheduler#registerSubsystem(Subsystem...)} in order for their {@link
+ * Subsystem#periodic()} methods to be called and for their default commands to be scheduled.
+ *
+ * @author Jackson
+ */
+
+@SuppressWarnings({"PMD.GodClass", "PMD.TooManyMethods", "PMD.TooManyFields"})
 public final class CommandScheduler {
     /**
      * The singleton instance
@@ -413,4 +436,5 @@ public final class CommandScheduler {
     public void onCommandFinish(Consumer<Command> action) {
         m_finishActions.add(action);
     }
+
 }

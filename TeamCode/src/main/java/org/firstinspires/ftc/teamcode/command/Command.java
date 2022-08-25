@@ -14,12 +14,12 @@ import java.util.function.BooleanSupplier;
  * @author Jackson
  */
 @SuppressWarnings("PMD.TooManyMethods")
-public interface Command {
-    /**
-     * The initial subroutine of a command.  Called once when the command is initially scheduled.
-     */
-    default void initialize() {
-    }
+
+public interface Command {/**
+ * The initial subroutine of a command.  Called once when the command is initially scheduled.
+ */
+default void initialize() {
+}
 
     /**
      * The main body of a command.  Called repeatedly while the command is scheduled.
