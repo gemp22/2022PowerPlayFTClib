@@ -2,6 +2,8 @@ package org.firstinspires.ftc.teamcode.hardware.motors;
 
 import androidx.annotation.NonNull;
 
+import androidx.annotation.NonNull;
+
 //import com.arcrobotics.ftclib.controller.PController;
 //import com.arcrobotics.ftclib.controller.PIDController;
 //import com.arcrobotics.ftclib.controller.wpilibcontroller.SimpleMotorFeedforward;
@@ -11,9 +13,12 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.configuration.typecontainers.MotorConfigurationType;
 
+import java.util.function.Supplier;
+
 import org.firstinspires.ftc.teamcode.controller.PController;
 import org.firstinspires.ftc.teamcode.controller.PIDController;
 import org.firstinspires.ftc.teamcode.controller.SimpleMotorFeedforward;
+import org.firstinspires.ftc.teamcode.hardware.HardwareDevice;
 
 import java.util.function.Supplier;
 
@@ -24,7 +29,7 @@ import java.util.function.Supplier;
  * @author Jackson
  */
 
-public class Motor implements org.firstinspires.ftc.teamcode.drivebase.HardwareDevice {
+public class Motor implements HardwareDevice {
     public enum GoBILDA {
         RPM_30(5264, 30), RPM_43(3892, 43), RPM_60(2786, 60), RPM_84(1993.6, 84),
         RPM_117(1425.2, 117), RPM_223(753.2, 223), RPM_312(537.6, 312), RPM_435(383.6, 435),
@@ -231,7 +236,7 @@ public class Motor implements org.firstinspires.ftc.teamcode.drivebase.HardwareD
 
     protected PIDController veloController = new PIDController(1, 0, 0);
 
-    protected PIDController positionController = new PController(1);
+    protected PController positionController = new PController(1);
 
     protected SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(0, 1, 0);
 
